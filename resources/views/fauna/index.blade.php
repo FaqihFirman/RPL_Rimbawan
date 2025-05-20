@@ -1,7 +1,7 @@
 <x-layout>
 
-  <div class="relative w-full h-1/3">
-      <img src="{{ asset('images/forest-strip.png') }}" alt="forest-strip" class="w-full h-3/4 object-cover">
+  <div class="relative w-full h-1/4 ">
+      <img src="{{ asset('images/forest-strip.png') }}" alt="forest-strip" class="w-full h-full object-cover">
       
       <div class="absolute inset-0 flex items-center justify-center">
           <input type="text" id="search" name="search" value="{{ old('search', $search ?? '') }}"
@@ -13,11 +13,18 @@
 
   <div id="fauna-list" class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-10 mx-15 my-10">
       @forelse ($faunas as $fauna)
-          <x-card :namaUmum="$fauna->nama_fauna" :namaLatin="$fauna->nama_latin" :imageUrl="asset('storage/' . $fauna->gambar_fauna)" />
+          <x-card 
+          :namaUmum="$fauna->nama_fauna" 
+          :namaLatin="$fauna->nama_latin" 
+          :imageUrl="asset('storage/' . $fauna->gambar_fauna)"
+          :url="route('fauna.detail', $fauna->fauna_id)" 
+          />
       @empty
           <p class="text-center col-span-full">Fauna tidak ditemukan.</p>
       @endforelse
   </div>
+
+  <x-pagination-buttons :paginator="$faunas" />
 
   <script>
       document.addEventListener('DOMContentLoaded', function() {

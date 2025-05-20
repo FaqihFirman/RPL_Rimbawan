@@ -11,6 +11,7 @@ class Card extends Component
     public $namaUmum;
     public $namaLatin;
     public $imageUrl;
+    
 
     public function __construct($namaUmum, $namaLatin, $imageUrl)
     {

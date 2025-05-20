@@ -19,13 +19,19 @@ class FaunaController extends Controller
             });
         }
     
-        $faunas = $query->paginate(10);
+        $faunas = $query->paginate(12);
 
         if ($request->ajax()) {
             return view('fauna.partials.cards', compact('faunas'))->render();
         }
         return view('fauna.index', compact('faunas'));
     }
+
+    public function detail($id)
+{
+    $fauna = Fauna::findOrFail($id);
+    return view('fauna.detail', compact('fauna'));
+}
     
     
 }

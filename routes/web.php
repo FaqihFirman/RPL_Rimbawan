@@ -12,10 +12,7 @@ Route::get('/', function () {
 
 Route::get('/fauna', [FaunaController::class, 'index'])->name('fauna.index');
 
-
-Route::get('/detail-fauna', function () {
-    return view('fauna.detail');
-});
+Route::get('/fauna/{id}', [FaunaController::class, 'detail'])->name('fauna.detail');
 
 
 
