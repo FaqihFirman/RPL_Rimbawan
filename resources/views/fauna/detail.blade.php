@@ -1,5 +1,5 @@
 <x-layout>
-    <section class="relative bg-cover bg-center py-20 text-white" style="background-image: url('{{ asset('images/Forest1.jpg') }}');">
+    <section class="relative bg-cover bg-center py-20 text-white" style="background-image: url('{{ asset('images/forest-strip.png') }}');">
         <div class="absolute inset-0 bg-black/40"></div>
         <div class="absolute bottom-0 left-0 right-0 h-32 bg-gradient-to-b from-transparent to-white z-10"></div>
         <div class="relative container mx-auto text-center  p-5 rounded">

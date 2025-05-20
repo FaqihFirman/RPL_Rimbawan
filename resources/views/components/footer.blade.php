@@ -1,7 +1,7 @@
 <footer class="bg-[#07211A] text-white py-8 mt-2">
     <div class="max-w-5xl mx-auto px-6 grid grid-cols-1 md:grid-cols-3 gap-8">
         
-        <!-- Navigation Links -->
+
         <div>
             <h4 class="text-lg font-semibold mb-2">AlasBase</h4>
             <ul class="space-y-1 text-sm">
@@ -11,15 +11,7 @@
                 <li><a href="#" class="hover:underline">+62-1234-5678</a></li>
             </ul>
         </div>
-        <!-- Company Info -->
-        {{-- <div>
-            <h3 class="text-xl font-bold mb-2">AlasBase</h3>
-            <p class="text-sm text-justify">
-                AlasBase adalah platform perangkat lunak yang menyediakan informasi tentang keragaman flora dan fauna di hutan xxx. Masyarakat umum dapat mengakses dan memahami kekayaan hayati hutan dengan mudah.
-            </p>
-        </div>
-         --}}
-        <!-- Social Media or Contact -->
+       
         <div class="flex flex-col justify-center items-center space-y-3">
             <div class="flex space-x-3"> 
                     <p class="text-sm">Home</p>
