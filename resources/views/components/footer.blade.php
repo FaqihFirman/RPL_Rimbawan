@@ -13,11 +13,6 @@
         </div>
        
         <div class="flex flex-col justify-center items-center space-y-3">
-            <div class="flex space-x-3"> 
-                    <p class="text-sm">Home</p>
-                    <p class="text-sm">Flora</p>
-                    <p class="text-sm">Fauna</p>
-            </div>
             <div class="flex space-x-8">
                 <img class="h-5" src="{{ asset('images/Instagram.png') }}" alt="">
                 <img class="h-5" src="{{ asset('images/Twitter.png') }}" alt="">

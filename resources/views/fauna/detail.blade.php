@@ -1,7 +1,7 @@
 <x-layout>
-    <section class="relative bg-cover bg-center py-20 text-white" style="background-image: url('{{ asset('images/forest-strip.png') }}');">
+    <section class="relative bg-cover bg-center py-20 text-white h-[30vh]" style="background-image: url('{{ asset('images/forest-strip.png') }}');">
         <div class="relative container mx-auto text-center p-5 rounded">
-            <h2 class="text-6xl font-bold mb-4">{{ $fauna->nama_umum }}</h2>
+            <h2 class="text-6xl font-bold mb-4">{{ $fauna->nama_fauna }}</h2>
             <p class="text-xl italic">{{ $fauna->nama_latin }}</p>
         </div>
     </section>
@@ -12,7 +12,7 @@
             <div class="flex flex-col space-y-5 w-full">
                 <div class="flex justify-between items-center w-full">
                     <div>
-                        <p class="text-3xl font-bold">{{ $fauna->nama_umum }}</p>
+                        <p class="text-3xl font-bold">{{ $fauna->nama_fauna }}</p>
                         <p class="text-gray-700 text-xl italic">{{ $fauna->nama_latin }}</p>
                     </div>
                     <div class="bg-red-900 text-white p-2 rounded">
@@ -20,7 +20,7 @@
                     </div>
                 </div>
                 <hr class="border-gray-400 w-full">
-                <p class="text-justify">
+                <p class="text-align: justify">
                     {!! $fauna->deskripsi_fauna ?? 'Deskripsi belum tersedia.' !!}
                 </p>
             </div>
