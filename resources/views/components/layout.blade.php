@@ -11,7 +11,7 @@
     <title>Document</title>
 </head>
 
-<body class="flex flex-col font-mono">
+<body class="flex flex-col h-full font-mono">
     <x-navbar></x-navbar>
 
     <main class="flex-grow">

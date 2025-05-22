@@ -14,5 +14,7 @@ Route::get('/fauna', [FaunaController::class, 'index'])->name('fauna.index');
 
 Route::get('/fauna/{id}', [FaunaController::class, 'detail'])->name('fauna.detail');
 
+Route::get('/flora', [FloraController::class, 'index'])->name('flora.index');
 
+Route::get('/flora/{id}', [FloraController::class, 'detail'])->name('flora.detail');
 
