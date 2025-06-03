@@ -14,10 +14,7 @@ use Filament\Forms\Components\TextInput;
 use Filament\Forms\Components\FileUpload;
 use Filament\Forms\Components\RichEditor;
 use Filament\Tables\Filters\SelectFilter;
-use Illuminate\Database\Eloquent\Builder;
 use App\Filament\Resources\FloraResource\Pages;
-use Illuminate\Database\Eloquent\SoftDeletingScope;
-use App\Filament\Resources\FloraResource\RelationManagers;
 
 class FloraResource extends Resource
 {
@@ -32,9 +29,9 @@ class FloraResource extends Resource
     {
         return $form
             ->schema([
-                TextInput::make ('nama_flora')->required()->label('Nama Flora'),
-                TextInput::make ('nama_latin')->required()->label('Nama Latin'),
-                TextInput::make ('habitat')->required()->label('Habitat'),
+                TextInput::make('nama_flora')->required()->label('Nama Flora')->unique(ignoreRecord: true),
+                TextInput::make('nama_latin')->required()->label('Nama Latin')->unique(ignoreRecord: true),
+                TextInput::make('habitat')->required()->label('Habitat'),
                 Select::make('status_konservasi')
                     ->label('Status Konservasi')
                     ->options([
@@ -50,13 +47,13 @@ class FloraResource extends Resource
                     ])
                     ->required()
                     ->searchable(),
-                FileUpload::make ('gambar_flora')
+                FileUpload::make('gambar_flora')
                     ->required()
                     ->image()
                     ->directory('flora')
                     ->label('Gambar Flora')
                     ->columnSpan(2),
-                RichEditor::make ('deskripsi_flora')
+                RichEditor::make('deskripsi_flora')
                     ->required()
                     ->label('Deskripsi Flora')
                     ->columnSpan(2),
@@ -69,7 +66,7 @@ class FloraResource extends Resource
             ->columns([
                 TextColumn::make('nama_flora')->label('Nama Flora')->searchable(),
                 TextColumn::make('nama_latin')->label('Nama Latin')->searchable(),
-                TextColumn::make('habitat'),
+                TextColumn::make('habitat')->label('Habitat'),
                 TextColumn::make('status_konservasi')->label('Status'),
                 TextColumn::make('admin.username')->label('Created by'),
             ])
@@ -86,7 +83,7 @@ class FloraResource extends Resource
                         'LC' => 'Resiko rendah (LC)',
                         'DD' => 'Kurang data (DD)',
                         'NE' => 'Tidak dievaluasi (NE)',
-                    ]),
+                    ])
             ])
             ->actions([
                 Tables\Actions\EditAction::make(),

@@ -33,8 +33,8 @@ class FaunaResource extends Resource
     {
         return $form
             ->schema([
-                TextInput::make ('nama_fauna')->required()->label('Nama Fauna'),
-                TextInput::make ('nama_latin')->required()->label('Nama Latin'),
+                TextInput::make ('nama_fauna')->required()->label('Nama Fauna')->unique(ignoreRecord: true),
+                TextInput::make ('nama_latin')->required()->label('Nama Latin')->unique(ignoreRecord: true),
                 TextInput::make ('habitat')->required()->label('Habitat'),
                 Select::make('status_konservasi')
                 ->label('Status Konservasi')
